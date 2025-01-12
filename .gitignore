@@ -1,0 +1,16 @@
+# python
+__pycache__
+env
+
+# spotify
+.cache
+
+# env
+.env
+.env.local
+
+# VS Code
+.vscode/settings.json
+
+# images
+images/
