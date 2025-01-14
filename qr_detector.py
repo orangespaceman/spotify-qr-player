@@ -114,5 +114,6 @@ class QRDetector:
 
         finally:
             cap.release()
-            cv2.destroyAllWindows()
+            if self.debug_mode:
+                cv2.destroyAllWindows()
             logger.info("Released camera, destroyed windows")
