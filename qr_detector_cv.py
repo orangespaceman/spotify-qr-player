@@ -8,7 +8,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class QRDetector:
+class QRDetectorCV:
     def __init__(self, debug_mode=False, camera=0, callback=None):
         """
         Initialise the QRDetector.

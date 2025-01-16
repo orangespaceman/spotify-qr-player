@@ -21,18 +21,25 @@ Make a note of your _Client ID_ and _Client Secret_
 
 ## Installation
 
-### zbar
-
-macOS:
+### macOS
 
 ```sh
 brew install zbar
 ```
 
-Linux:
+### Raspberry Pi:
 
-```sh
-sudo apt-get install libzbar0
+Running this on a Raspberry Pi may involve installing the following:
+
+```
+sudo apt update
+sudo apt install -y python3-picamera2
+```
+
+You may also need:
+
+```
+sudo apt install -y libcamera-apps python3-pyzbar python3-numpy python3-pyqt5
 ```
 
 ### Python

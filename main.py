@@ -1,4 +1,11 @@
-from qr_detector import QRDetector
+import platform
+
+# Use macOS or Pi camera lib
+if platform.system() == "Darwin":
+    from qr_detector_cv import QRDetectorCV as QRDetector
+else:
+    from qr_detector_pi import QRDetectorPi as QRDetector
+
 from spotify_controller import SpotifyController
 from dotenv import load_dotenv
 import os
@@ -6,7 +13,7 @@ import logging
 
 load_dotenv()
 
-# load env vars
+# Load env vars
 env = {
     "LOG_LEVEL": os.getenv("LOG_LEVEL", "WARNING").upper(),
     "DEBUG_MODE": os.getenv("DEBUG_MODE", "False").lower() == "true",
@@ -44,7 +51,7 @@ class Main:
 
     def run(self):
         """
-        Instantiate and run
+        Instantiate and run.
         """
         self.spotify_controller = SpotifyController(
             device_name=env["DEVICE_NAME"],
