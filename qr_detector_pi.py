@@ -1,4 +1,5 @@
 from picamera2 import Picamera2, Preview
+from libcamera import controls
 from pyzbar.pyzbar import decode
 import numpy as np
 import time
@@ -80,6 +81,7 @@ class QRDetectorPi:
 
         try:
             self.picam.start()
+            self.picam.set_controls({"AfMode": controls.AfModeEnum.Continuous})
             while True:
                 # Capture a frame from the camera
                 frame = self.picam.capture_array()
