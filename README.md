@@ -33,14 +33,16 @@ Running this on a Raspberry Pi may involve installing the following:
 
 ```
 sudo apt update
+sudo apt upgrade
 sudo apt install -y python3-picamera2
 ```
 
 You may also need:
 
 ```
-sudo apt install -y libcamera-apps python3-pyzbar python3-numpy python3-pyqt5
+sudo apt install -y libcamera-apps libcamera-dev python3-libcamera python3-pyzbar python3-numpy python3-pyqt5 libcap-dev libzbar0 libzbar-dev
 ```
+
 
 ### Python
 
@@ -49,6 +51,12 @@ Create a virtual env:
 ```sh
 python -m venv env
 source env/bin/activate
+```
+
+On a Raspberry Pi you may need to replace the above with:
+
+```sh
+python -m venv --system-site-packages env
 ```
 
 Install dependencies:

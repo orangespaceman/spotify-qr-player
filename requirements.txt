@@ -4,4 +4,5 @@ picamera2==0.3.24
 PyChromecast==14.0.5
 python-dotenv==1.0.1
 pyzbar==0.1.9
+rpi-libcamera==0.1a7
 spotipy==2.24.0
